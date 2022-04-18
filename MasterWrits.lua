@@ -603,7 +603,9 @@ function WritCreater.InventorySlot_ShowContextMenu(rowControl,debugslot)
     -- Search for if it is armour or not
     if not WritCreater.savedVarsAccountWide.rightClick or not LibCustomMenu then return end
     zo_callLater(function ()
-        AddCustomMenuItem("Craft Sealed Writ", function ()
+        local labelText = "Craft Sealed Writ"
+        if WritCreater.lang =="jp" then labelText = "密封された依頼をクラフトする" end    -- TODO: Should expel to the language file.
+        AddCustomMenuItem(labelText, function ()
             if station == CRAFTING_TYPE_ENCHANTING then
             	EnchantingMasterWrit(nil, writText,  GetItemUniqueId(bag, slot))
             else
