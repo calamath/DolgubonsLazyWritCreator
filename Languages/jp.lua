@@ -66,6 +66,19 @@ function WritCreater.langWritNames() -- Vital
 	return names
 end
 
+function WritCreater.langCraftKernels()
+	return 
+	{
+		[CRAFTING_TYPE_ENCHANTING] = "付呪",
+		[CRAFTING_TYPE_BLACKSMITHING] = "鍛冶",
+		[CRAFTING_TYPE_CLOTHIER] = "仕立",
+		[CRAFTING_TYPE_PROVISIONING] = "調理",
+		[CRAFTING_TYPE_WOODWORKING] = "木工",
+		[CRAFTING_TYPE_ALCHEMY] = "錬金術",
+		[CRAFTING_TYPE_JEWELRYCRAFTING] = "宝飾",
+	}
+end
+
 function WritCreater.langMasterWritNames() -- Vital
 	local names = {
 	["M"] 							= "優れた",
@@ -822,14 +835,55 @@ WritCreater.optionStrings['noDELETEConfirmJewelry']						= "宝飾のマスタ�
 WritCreater.optionStrings['noDELETEConfirmJewelryTooltip']				= "宝飾のマスター依頼（密封された宝飾依頼）を破壊するときの確認ダイアログに DELETE の文字を自動で入力します"
 WritCreater.optionStrings['suppressQuestAnnouncements']					= "クラフト依頼クエストのアナウンス表示の抑制"
 WritCreater.optionStrings['suppressQuestAnnouncementsTooltip']			= "クラフト依頼のクエスト受諾時やアイテムのクラフト時にセンタースクリーンに表示されるメッセージ を抑制します"
-WritCreater.optionStrings["jubilee"]									= "記念祭の箱の中身を取り出す"
-WritCreater.optionStrings["jubilee tooltip"]							= "記念祭のギフトボックスからアイテムを自動的に取り出します"
 WritCreater.optionStrings["pet begone"]									= "ペットと他プレイヤーを非表示にする"
 WritCreater.optionStrings["pet begone tooltip"]							= "【ペットを非表示にすべきかの指針】\n物体の使用やNPCとの会話のとき、ペットが立ちふさがって邪魔になることがあります。非表示を選択すると、クラフト台や令状アイテムの提出場所などでペットや他のプレイヤーが非表示となり、操作を邪魔されることがなくなります。\n\n(注)この機能の副作用について、右の警告マークのツールチップも読んでください。\n\n「常に非表示にする」オプションはクラフト依頼しか行わない専門キャラでのみ使うことを推奨します。"
 WritCreater.optionStrings["pet begone choices"]							= {"非表示にしない", "常に非表示にする", "クラフト依頼のクエスト受諾時のみ非表示"}
 WritCreater.optionStrings["pet begone warning"]							= "非表示がオンのときは、クラウン木枠箱のパクルーティが表示されます。他のプレイヤーや戦闘ペットは見えなくなります。オンに切り替えても他のプレイヤーはすぐに消えるわけではありません。また、オフに切り替えてもすぐには再表示されません。これらの現象はバグではなく、不可避の副作用です。"
-WritCreater.optionStrings["questBuffer"]								= "Writ Quest Buffer"
-WritCreater.optionStrings["questBufferTooltip"]							= "Keep a buffer of quests so you can always have room to pick up writs"
-WritCreater.optionStrings["craftMultiplier"]							= "Craft multiplier"
-WritCreater.optionStrings["craftMultiplierTooltip"]						= "Craft multiple copies of each required item so that you don't need to recraft them next time the writ comes up. Note: Save approximately 37 slots for each increase above 1"
+WritCreater.optionStrings["questBuffer"]								= "令状クエストバッファー"
+WritCreater.optionStrings["questBufferTooltip"]							= "令状クエストをいつでも受諾できるように、クエスト受諾枠の中にバッファー（令状クエスト用の予約枠）を確保します"
+WritCreater.optionStrings["craftMultiplier"]							= "クラフト乗数（2以上：余分にクラフト）"
+WritCreater.optionStrings["craftMultiplierTooltip"]						= "必要なアイテムごとに複数のコピーを余分に作成しておくと、次に令状クエストがきたときに再度クラフトする必要がなくなります。\n注意：クラフト乗数を1つ増やすごとに、インベントリに約37スロットを確保します。"
 
+WritCreater.optionStrings["allReward"]									= "全クラフト職制"
+WritCreater.optionStrings["allRewardTooltip"]							= "全てのクラフト職制に共通して取るべき動作"
+
+WritCreater.optionStrings['sameForALlCrafts']							= "全クラフト職制で同じオプションを使用する"
+WritCreater.optionStrings['sameForALlCraftsTooltip']					= "全クラフト職制について、このタイプの報酬に同じオプションを使用する"
+WritCreater.optionStrings['1Reward']									= "Blacksmithing"
+WritCreater.optionStrings['2Reward']									= "Use for all"
+WritCreater.optionStrings['3Reward']									= "Use for all"
+WritCreater.optionStrings['4Reward']									= "Use for all"
+WritCreater.optionStrings['5Reward']									= "Use for all"
+WritCreater.optionStrings['6Reward']									= "Use for all"
+WritCreater.optionStrings['7Reward']									= "Use for all"
+
+WritCreater.optionStrings["matsReward"]									= "Mat Rewards"
+WritCreater.optionStrings["matsRewardTooltip"]							= "What to do with crafting material rewards"
+WritCreater.optionStrings["surveyReward"]								= "調査報告の報酬"
+WritCreater.optionStrings["surveyRewardTooltip"]						= "調査報告の報酬をどうするか"
+WritCreater.optionStrings["masterReward"]								= "マスター依頼の報酬"
+WritCreater.optionStrings["masterRewardTooltip"]						= "マスター依頼の報酬をどうするか"
+WritCreater.optionStrings["repairReward"]								= "修理キットの報酬"
+WritCreater.optionStrings["repairRewardTooltip"]						= "修理キットの報酬をどうするか"
+WritCreater.optionStrings["ornateReward"]								= "Ornate Gear Rewards"
+WritCreater.optionStrings["ornateRewardTooltip"]						= "What to do with ornate gear rewards"
+WritCreater.optionStrings["intricateReward"]							= "Intricate Gear Rewards"
+WritCreater.optionStrings["intricateRewardTooltip"]						= "What to do with intricate gear rewards"
+WritCreater.optionStrings["soulGemReward"]								= "Empty Soul Gems"
+WritCreater.optionStrings["soulGemTooltip"]								= "What to do with empty soul gems"
+WritCreater.optionStrings["glyphReward"]								= "Glyphs"
+WritCreater.optionStrings["glyphRewardTooltip"]							= "What to do with glyphs"
+WritCreater.optionStrings["recipeReward"]								= "Recipes"
+WritCreater.optionStrings["recipeRewardTooltip"]						= "What to do with recipes"
+WritCreater.optionStrings["fragmentReward"]								= "Psijic Fragments"
+WritCreater.optionStrings["fragmentRewardTooltip"]						= "What to do with psijic fragments"
+
+
+WritCreater.optionStrings["writRewards submenu"]						= "依頼書の報酬の取り扱い"
+WritCreater.optionStrings["writRewards submenu tooltip"]				= "依頼書からの全ての報酬をどうするか"
+
+WritCreater.optionStrings["jubilee"]									= "記念祭の箱の中身を取り出す"
+WritCreater.optionStrings["jubilee tooltip"]							= "記念祭のギフトボックスからアイテムを自動的に取り出します"
+
+
+WritCreater.optionStrings["rewardChoices"]								= {"何もしない","預ける","ガラクタ", "破壊する"}
