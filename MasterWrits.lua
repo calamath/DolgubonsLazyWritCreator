@@ -477,39 +477,37 @@ function WritCreater.MasterWritsQuestAdded(event, journalIndex,name)
 			table.insert(info, {"greataxe",4})
 			--local patternBlacksmithing =  smithingSearch(condition, info) --search pattern
 
-			if SmithingMasterWrit(journalIndex, info, CRAFTING_TYPE_BLACKSMITHING, false, "Rubedite",journalIndex) then
+			if SmithingMasterWrit(journalIndex, info, CRAFTING_TYPE_BLACKSMITHING, false, langInfo[CRAFTING_TYPE_BLACKSMITHING]["match"][10],journalIndex) then
 				return
 			end
 
 			info = partialTable(langInfo[CRAFTING_TYPE_WOODWORKING]["pieces"] , 1, 6)
 			info = keyValueTable(info)
 
-			SmithingMasterWrit(journalIndex, info, CRAFTING_TYPE_WOODWORKING, false, "Ruby Ash",journalIndex)
+			SmithingMasterWrit(journalIndex, info, CRAFTING_TYPE_WOODWORKING, false, langInfo[CRAFTING_TYPE_WOODWORKING]["match"][10],journalIndex)
 
 		elseif writType == CRAFTING_TYPE_ALCHEMY then
 		elseif writType == CRAFTING_TYPE_ENCHANTING then
 			EnchantingMasterWrit(journalIndex)
 		elseif writType == CRAFTING_TYPE_PROVISIONING then
 		elseif writType == "shield" then
-			local info = {{"shield",2}}
-
-			if WritCreater.lang=="de" then info[1][1] ="schilden" end
-			if WritCreater.lang=="fr" then info[1][1] = "bouclier" end
-			SmithingMasterWrit(journalIndex, info, CRAFTING_TYPE_WOODWORKING, true, "Ruby Ash",journalIndex)
+			local info = partialTable(langInfo[CRAFTING_TYPE_WOODWORKING]["pieces"] , 2, 2)
+			info = keyValueTable(info)
+			SmithingMasterWrit(journalIndex, info, CRAFTING_TYPE_WOODWORKING, true, langInfo[CRAFTING_TYPE_WOODWORKING]["match"][10],journalIndex)
 		elseif writType == "plate" then
 			local info = partialTable(langInfo[CRAFTING_TYPE_BLACKSMITHING]["pieces"] , 8, 14)
 			info = keyValueTable(info)
 
-			SmithingMasterWrit(journalIndex, info, CRAFTING_TYPE_BLACKSMITHING, true, "Rubedite",journalIndex)
+			SmithingMasterWrit(journalIndex, info, CRAFTING_TYPE_BLACKSMITHING, true, langInfo[CRAFTING_TYPE_BLACKSMITHING]["match"][10],journalIndex)
 		elseif writType == "leatherwear" then
 			local info = partialTable(langInfo[CRAFTING_TYPE_CLOTHIER]["pieces"] , 9, 15)
 			info = keyValueTable(info)
-			SmithingMasterWrit(journalIndex, info, CRAFTING_TYPE_CLOTHIER, true, "Rubedo Leather",journalIndex)
+			SmithingMasterWrit(journalIndex, info, CRAFTING_TYPE_CLOTHIER, true, langInfo[CRAFTING_TYPE_CLOTHIER]["match"][20],journalIndex)
 		elseif writType == "tailoring" then
 
 			local info = partialTable(langInfo[CRAFTING_TYPE_CLOTHIER]["pieces"] , 1, 8)
 			info = keyValueTable(info)
-			SmithingMasterWrit(journalIndex, info, CRAFTING_TYPE_CLOTHIER, true, "Ancestor Silk",journalIndex)
+			SmithingMasterWrit(journalIndex, info, CRAFTING_TYPE_CLOTHIER, true, langInfo[CRAFTING_TYPE_CLOTHIER]["match"][10],journalIndex)
 		end
 
 	end
@@ -590,7 +588,7 @@ function WritCreater.InventorySlot_ShowContextMenu(rowControl,debugslot)
 					if flavour == GetItemLinkFlavorText(exampleSealedWrits[CRAFTING_TYPE_BLACKSMITHING]) then
 						isArmour = true
 					end
-					material = "Rubedite"
+					material = langInfo[CRAFTING_TYPE_BLACKSMITHING]["match"][10] -- "Rubedite"
 					table.insert(info, {"greataxe",4})
 				elseif station == CRAFTING_TYPE_WOODWORKING then
 					if flavour == GetItemLinkFlavorText(exampleSealedWrits[CRAFTING_TYPE_WOODWORKING]) then
@@ -599,13 +597,13 @@ function WritCreater.InventorySlot_ShowContextMenu(rowControl,debugslot)
 					table.insert(info,{"healing",6}) 
 					table.insert(info,{"frost",4}) 
 
-					material = "Ruby Ash"
+					material = langInfo[CRAFTING_TYPE_WOODWORKING]["match"][10] -- "Ruby Ash"
 				elseif station == CRAFTING_TYPE_CLOTHIER then
 
 					if flavour == GetItemLinkFlavorText(exampleSealedWrits[CRAFTING_TYPE_CLOTHIER]) then
-						material = "Ancestor Silk"
+						material = langInfo[CRAFTING_TYPE_CLOTHIER]["match"][10] -- "Ancestor Silk"
 					else
-						material = "Rubedo Leather"
+						material = langInfo[CRAFTING_TYPE_CLOTHIER]["match"][20] -- "Rubedo Leather"
 					end
 					isArmour = true
 				end
