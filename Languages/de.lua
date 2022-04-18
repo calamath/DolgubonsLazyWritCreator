@@ -320,7 +320,7 @@ local craftInfo =
 end
 
 function WritCreater.masterWritQuality()
-	return {{"episch",4},{"legendär",5}}
+	return {{"Überlegen",3},{"episch",4},{"legendär",5}}
 end
 
 function WritCreater.langEssenceNames() --exact!

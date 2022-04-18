@@ -112,6 +112,7 @@ end
 
 local weaponTraits ={}
 local armourTraits = {}
+local jewelryTraits = {}
 ------------------------------------
 -- TRAIT DECLARATION
 
@@ -120,6 +121,8 @@ local armourTraits = {}
 
 armourTraits = {}
 weaponTraits ={}
+jewelryTraits ={}
+
 for i = 0, 8 do --create the weapon trait table
 	--Takes the strings starting at SI_ITEMTRAITTYPE0 == no trait, # 897 to SI_ITEMTRAITTYPE8 === Divines, #905
 	--Then saves the proper trait index used for crafting to it. The offset of 1 is due to ZOS; the offset of STURDY is so they start at 12
@@ -132,6 +135,20 @@ for i = 0, 7 do --create the armour trait table
 	--Then saves the proper trait index used for crafting to it. The offset of 1 is due to ZOS; the offset of STURDY is so they start at 12
 	armourTraits[i + 1] = {[2] = i + 1 + ITEM_TRAIT_TYPE_ARMOR_STURDY, [1] = myLower(GetString(SI_ITEMTRAITTYPE11 + i))}
 end
+
+for i = 0, 2 do --create the jewelry trait table
+	jewelryTraits[i + 1] = {
+		[2] = i + 1 + ITEM_TRAIT_TYPE_JEWELRY_HEALTHY, 
+		[1] = myLower(GetString(SI_ITEMTRAITTYPE21 + i)), 
+	}
+end
+for i = 0, 5 do --create the jewelry trait table
+	jewelryTraits[#jewelryTraits + 1] = {
+		[2] = i + 1 + ITEM_TRAIT_TYPE_JEWELRY_SWIFT, 
+		[1] = myLower(GetString(SI_ITEMTRAITTYPE28 + i))
+	}
+end
+
 --Add a few missing traits to the tables - i.e., nirnhoned, and no trait
 armourTraits[#armourTraits + 1] = {[2] = ITEM_TRAIT_TYPE_NONE + 1, [1] = myLower(GetString(SI_ITEMTRAITTYPE0))} -- No Trait to armour traits
 armourTraits[#armourTraits + 1] = {[2] = ITEM_TRAIT_TYPE_ARMOR_NIRNHONED + 1, [1] = myLower(GetString(SI_ITEMTRAITTYPE26))} -- Nirnhoned
@@ -384,6 +401,12 @@ local function SmithingMasterWrit(journalIndex, info, station, isArmour, materia
 	
 	local quality = smithingSearch(conditionStrings["quality"],WritCreater.masterWritQuality()) --search quality
 
+	-- overwriting when jewelry crafting.
+	if station == CRAFTING_TYPE_JEWELRYCRAFTING then
+		trait = smithingSearch(conditionStrings["trait"], jewelryTraits )
+		style = " "   -- The jewelery has no style, but it overwrites to a space instead of the empty string to bypass the inspection of the foundAllRequirements() function.
+	end
+
 	if foundAllRequirements(pattern, style, setIndex, trait, quality) then
 		-- too many variable stuff so need to do multiple calls to zo_strformat
 		d(WritCreater.strings.masterWritSmithToCraft(
@@ -508,6 +531,10 @@ function WritCreater.MasterWritsQuestAdded(event, journalIndex,name)
 			local info = partialTable(langInfo[CRAFTING_TYPE_CLOTHIER]["pieces"] , 1, 8)
 			info = keyValueTable(info)
 			SmithingMasterWrit(journalIndex, info, CRAFTING_TYPE_CLOTHIER, true, langInfo[CRAFTING_TYPE_CLOTHIER]["match"][10],journalIndex)
+		elseif writType == "jewelry" then
+			local info = partialTable(langInfo[CRAFTING_TYPE_JEWELRYCRAFTING]["pieces"] , 1, 2)
+			info = keyValueTable(info)
+			SmithingMasterWrit(journalIndex, info, CRAFTING_TYPE_JEWELRYCRAFTING, true, langInfo[CRAFTING_TYPE_JEWELRYCRAFTING]["match"][5],journalIndex)
 		end
 
 	end
@@ -561,6 +588,7 @@ function WritCreater.InventorySlot_ShowContextMenu(rowControl,debugslot)
     [CRAFTING_TYPE_BLACKSMITHING] = "|H1:item:119680:6:1:0:0:0:47:188:4:240:12:29:0:0:0:0:0:0:0:0:56375|h|h",
     [CRAFTING_TYPE_WOODWORKING] = "|H1:item:119682:6:1:0:0:0:65:192:4:95:14:47:0:0:0:0:0:0:0:0:63250|h|h",
     [CRAFTING_TYPE_ENCHANTING] = "|H1:item:121528:6:1:0:0:0:26581:225:5:0:0:0:0:0:0:0:0:0:0:0:66000|h|h",
+	[CRAFTING_TYPE_JEWELRYCRAFTING] = "|H1:item:153739:4:1:0:0:0:18:255:3:385:22:0:0:0:0:0:0:0:0:0:275000|h|h",
 	}
 	local writText = GenerateMasterWritBaseText(link)
 	local station
@@ -604,6 +632,11 @@ function WritCreater.InventorySlot_ShowContextMenu(rowControl,debugslot)
 						material = langInfo[CRAFTING_TYPE_CLOTHIER]["match"][10] -- "Ancestor Silk"
 					else
 						material = langInfo[CRAFTING_TYPE_CLOTHIER]["match"][20] -- "Rubedo Leather"
+					end
+					isArmour = true
+				elseif station == CRAFTING_TYPE_JEWELRYCRAFTING then
+					if flavour == GetItemLinkFlavorText(exampleSealedWrits[CRAFTING_TYPE_JEWELRYCRAFTING]) then
+						material = langInfo[CRAFTING_TYPE_JEWELRYCRAFTING]["match"][5] -- "Platinum"
 					end
 					isArmour = true
 				end

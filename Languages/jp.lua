@@ -430,7 +430,7 @@ local craftInfo =
 end
 
 function WritCreater.masterWritQuality() -- Vital . This is probably not necessary, but it stays for now because it works
-	return {{"極上",4},{"伝説",5}}
+	return {{"上級",3},{"極上",4},{"伝説",5}}
 end
 
 
