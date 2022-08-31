@@ -465,6 +465,7 @@ local gpadActivitiesList = TIMED_ACTIVITIES_GAMEPAD.activitiesList
 		en = "Sheogorath",
 		de = "Sheogorath",
 		fr = "Shéogorath",
+		jp = "シェオゴラス",
 	}
 	-- EVENT_MANAGER:RegisterForEvent(WritCreater.name.."cheesyMusic", EVENT_PLAYER_ACTIVATED, setupCheesyMusic)
 	-- Handles the dialogue where we actually complete the quest

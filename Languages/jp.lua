@@ -891,6 +891,40 @@ WritCreater.optionStrings["writRewards submenu tooltip"]				= "依頼書から�
 
 WritCreater.optionStrings["jubilee"]									= "記念祭の箱の中身を取り出す"
 WritCreater.optionStrings["jubilee tooltip"]							= "記念祭のギフトボックスからアイテムを自動的に取り出します"
-
+WritCreater.optionStrings["skin"]										= "Writ CrafterのUIスキン"
+WritCreater.optionStrings["skinTooltip"]								= "Writ CrafterのUI用のスキン"
+WritCreater.optionStrings["skinOptions"]								= {"標準", "チーズくさい"}
 
 WritCreater.optionStrings["rewardChoices"]								= {"何もしない","預ける","ガラクタ", "破壊する"}
+
+
+WritCreater.cheeseyLocalizations
+=
+{
+	['reward'] = "-1 正気度",
+	['rewardStylized'] = "-1 |cFFFFFF[正気度]|",
+	['finalReward'] = "全部クリアして、確かめてみてください！",
+	['menuName'] = "チーズくさい",
+	['endeavorName'] = "チーズくさいエンデバー",
+	['tasks']={
+		{name="チーズへの愛を告白する",completion = "これで、あなたのチーズ好きが世界中に知れ渡りました！",
+			description="チャットで「私はチーズが大好きだー！」と言う"},
+		{name = "シェオおじさんを訪ねる", completion = "シェオおじさんも喜んでましたよ。そして悲しげな表情を浮かべた。チーズくさいけど、いつもキレッキレ！",
+			description="シェオゴラスを見つけて話しかける。彼はとても寂しがり屋で、あなたにまた会いたがっています"},
+		{name = "ひどい音楽を聴かせる", completion = "ギャー！ ひどい音で耳が痛くなったーっ！",
+			description="楽器演奏のエモートを使う"},
+		{name = "チーズを捨てる", completion = "チーズを捨てましたね。どうせカビていたんだろう...。",
+			description="|H1:item:27057:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0|h|hを１つ破壊する。 そう、たしかにクレイジーですが、そこがポイントです！"},
+		{name = "チーズくさい本を読む", completion = "なんて香しい靴下なんだろう。いや、チーズ！？....いえ、本のことです！",
+			description="本「|H0:item:121046:364:50:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:10000:0|h|h」を読む"},
+		{name = "他の全てのチーズくさいエンデバーを完了する", completion = "チーズ！チーズ！チーズだらけだ！依頼書をやっている時も？",
+		description="全部クリアすればシェオゴラスも大喜びですよ"},
+	},
+	['allComplete'] = "全てのチーズくさいエンデバーが完了した！",
+	['chatbingo'] = "私はチーズが大好きだー！",
+	["cheatyCheeseBook"] = "おかしくなっているのかもしれないが、あの本のことは覚えていないようだ...。",
+}
+WritCreater.cheeseBingos["私はチーズが大好きだ"] = true
+WritCreater.cheeseBingos["私はチーズが大好きだー"] = true
+WritCreater.cheeseBingos["私はチーズが大好きだー！"] = true
+
