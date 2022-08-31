@@ -835,14 +835,14 @@ WritCreater.optionStrings['dailyResetWarnType']							= "デイリーリセッ�
 WritCreater.optionStrings['dailyResetWarnTypeTooltip']					= "デイリーリセットが起ころうとしたときにどの種類のワーニングを表示するか"
 WritCreater.optionStrings['dailyResetWarnTypeChoices']					={ "なし","Type 1", "Type 2", "Type 3", "Type 4", "すべて"}
 WritCreater.optionStrings['stealingProtection']							= "盗み行為防止"
-WritCreater.optionStrings['stealingProtectionTooltip']					= "令状アイテムの提出場所の近くで誤って盗むのを防ぎます"
+WritCreater.optionStrings['stealingProtectionTooltip']					= "ジャーナルに令状クエストを持っている間、あなたが誤って盗むのを防ぎます"
 WritCreater.optionStrings['jewelryWritDestroy']							= "Destroy Jewelry Sealed Writs"
 WritCreater.optionStrings['jewelryWritDestroyTooltip']					= "Destroy looted Jewelry Sealed writs. WARNING: There is no prompt!"
 WritCreater.optionStrings['jewelryWritDestroyWarning']					= "WARNING: There is no prompt when destroying jewelry writs! Enable at your own risk!"
 WritCreater.optionStrings['noDELETEConfirmJewelry']						= "宝飾のマスター依頼を破壊する操作の簡略化"
 WritCreater.optionStrings['noDELETEConfirmJewelryTooltip']				= "宝飾のマスター依頼（密封された宝飾依頼）を破壊するときの確認ダイアログに DELETE の文字を自動で入力します"
-WritCreater.optionStrings['suppressQuestAnnouncements']					= "クラフト依頼クエストのアナウンス表示の抑制"
-WritCreater.optionStrings['suppressQuestAnnouncementsTooltip']			= "クラフト依頼のクエスト受諾時やアイテムのクラフト時にセンタースクリーンに表示されるメッセージ を抑制します"
+WritCreater.optionStrings['suppressQuestAnnouncements']					= "令状クエストのアナウンス表示の抑制"
+WritCreater.optionStrings['suppressQuestAnnouncementsTooltip']			= "クラフト依頼の令状クエスト受諾時やアイテムのクラフト時にセンタースクリーンに表示されるメッセージ を抑制します"
 WritCreater.optionStrings["questBuffer"]								= "令状クエストバッファー"
 WritCreater.optionStrings["questBufferTooltip"]							= "令状クエストをいつでも受諾できるように、クエスト受諾枠の中にバッファー（令状クエスト用の予約枠）を確保します"
 WritCreater.optionStrings["craftMultiplier"]							= "クラフト乗数（2以上：余分にクラフト）"
@@ -896,6 +896,8 @@ WritCreater.optionStrings["skinTooltip"]								= "Writ CrafterのUI用のスキ
 WritCreater.optionStrings["skinOptions"]								= {"標準", "チーズくさい"}
 
 WritCreater.optionStrings["rewardChoices"]								= {"何もしない","預ける","ガラクタ", "破壊する"}
+WritCreater.optionStrings["scan for unopened"]							= "ログイン時にコンテナを開く"
+WritCreater.optionStrings["scan for unopened tooltip"]					= "ログイン時にバッグをスキャンして、クラフト依頼の未開封の報酬コンテナを探し、開封を試みます"
 
 
 WritCreater.cheeseyLocalizations
