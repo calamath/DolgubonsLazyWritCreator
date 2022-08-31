@@ -51,6 +51,14 @@ local function proper(str)
 	end
 end
 
+-- for automatic hireling looting feature in Japanese language mode
+WritCreater.hirelingMailSubjects = WritCreater.hirelingMailSubjects or {}
+WritCreater.hirelingMailSubjects["付呪師用素材"] = true		-- Raw Enchanter Materials
+WritCreater.hirelingMailSubjects["仕立師用素材"] = true		-- Raw Clothier Materials
+WritCreater.hirelingMailSubjects["鍛冶師用素材"] = true		-- Raw Blacksmith Materials
+WritCreater.hirelingMailSubjects["木工師用素材"] = true		-- Raw Woodworker Materials
+WritCreater.hirelingMailSubjects["調理師用素材"] = true		-- Raw Provisioner Materials
+
 function WritCreater.langWritNames() -- Vital
 	-- Exact!!!  I know for german alchemy writ is Alchemistenschrieb - so ["G"] = schrieb, and ["A"]=Alchemisten
 	local names = {
@@ -839,6 +847,9 @@ WritCreater.optionStrings["questBuffer"]								= "令状クエストバッフ�
 WritCreater.optionStrings["questBufferTooltip"]							= "令状クエストをいつでも受諾できるように、クエスト受諾枠の中にバッファー（令状クエスト用の予約枠）を確保します"
 WritCreater.optionStrings["craftMultiplier"]							= "クラフト乗数（2以上：余分にクラフト）"
 WritCreater.optionStrings["craftMultiplierTooltip"]						= "必要なアイテムごとに複数のコピーを余分に作成しておくと、次に令状クエストがきたときに再度クラフトする必要がなくなります。\n注意：クラフト乗数を1つ増やすごとに、インベントリに約37スロットを確保します。"
+WritCreater.optionStrings['hireling behaviour']							= "助手のメールの取り扱い"
+WritCreater.optionStrings['hireling behaviour tooltip']					= "クラフトスキルで雇った助手からのメールをどのようにするか（メールから素材を自動で取り出すかどうか）"
+WritCreater.optionStrings['hireling behaviour choices']					= { "何もしない","取り出して削除", "取り出すだけ" }
 
 WritCreater.optionStrings["allReward"]									= "全クラフト職制"
 WritCreater.optionStrings["allRewardTooltip"]							= "全てのクラフト職制に共通して取るべき動作"
