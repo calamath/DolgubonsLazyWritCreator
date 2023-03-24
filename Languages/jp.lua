@@ -899,7 +899,7 @@ WritCreater.optionStrings["rewardChoices"]								= {"何もしない","預け�
 WritCreater.optionStrings["scan for unopened"]							= "ログイン時にコンテナを開く"
 WritCreater.optionStrings["scan for unopened tooltip"]					= "ログイン時にバッグをスキャンして、クラフト依頼の未開封の報酬コンテナを探し、開封を試みます"
 
-WritCreater.optionStrings["smart style slot save"]							= "スタイル素材スロットを賢く節約"
+WritCreater.optionStrings["smart style slot save"]							= "スタイル素材を少ない順に使用"
 WritCreater.optionStrings["smart style slot save tooltip"]					= "ESO Plus会員ではないとき、スタイル素材のより小さなスタックから使用することで、使用されるスロットを最小限に抑えることを試みます"
 
 
@@ -938,46 +938,49 @@ WritCreater.cheeseBingos["私はチーズが大好きだー！"] = true
 WritCreater.cheeseyLocalizations
 =
 {
-	['menuName'] = "Ritual",
-	['endeavorName'] = "Ritual Endeavors",
+	['menuName'] = "儀式",
+	['endeavorName'] = "儀式的なエンデバー",
 	['tasks']={
-		{original="You found a strange pamphlet... Maybe you should /read it",name="You read some instructions on a ritual for luck", completion = "You learned how to do a ritual for luck!",
-			description="Use the /read emote"},
+		{original="あなたは奇妙なパンフレットを見つけました．．．多分それを読む(/read)べきです。",name="幸運を呼ぶ儀式の説明を読む", completion = "幸運を呼ぶ儀式を行う方法を学びました！",
+			description="本を読むエモート(/read)を使う"},
 
-		{original="???", name = "Obtain an innocent goat's guts", completion = "You monster! Anything for luck, I guess",
-			description="Loot guts from a dead livestock goat. You don't have be the one to kill it... but that's the easiest way"},
+		{original="???", name = "無実の山羊のはらわたを調達する", completion = "モンスターめ！ 幸運を呼ぶためなら何でもありだと思っている．．．",
+			description="死んだ家畜の山羊から内臓を入手する。別にあなたが殺める必要はないのだけど．．．でもそれが最も簡単な方法です"},
 
-		{original="???", name = "Head to the ritual site, Arananga", completion = "You made it! It seems like a very industrious place",
-			description="Not sure where Arananga is? Maybe it's a 'gifted' crafting station..."},
+		{original="???", name = "儀式の場所、アラナンガに向かう", completion = "よくやったね！ とても精励な場所のようですね",
+			description="アラナンガがどこにあるか分からないって？ もしかしたら賜り物のクラフト台かも．．．"},
 
-		{original="???", name = "Destroy the goat guts", completion = "You 'burnt' the sacrifice",
-			description="Destroy the |H1:item:42870:30:1:0:0:0:0:0:0:0:0:0:0:0:16:0:0:0:1:0:0|h|h you looted"},
+		{original="???", name = "山羊のはらわたを破壊する", completion = "あなたは生け贄を燃やしてやった",
+			description="入手した |H1:item:42870:30:1:0:0:0:0:0:0:0:0:0:0:0:16:0:0:0:1:0:0|h|h を破壊する"},
 
-		{original="???", name = "Praise RNGesus in chat", completion = "You feel strangely lucky, but maybe it's just a feeling...",
-			description="You can't really tell what it actually said, but it's your best guess"},
+		{original="???", name = "チャットで RNGesus の神を称える", completion = "あなたは不思議と運が良くなったように感じる。いや、もしかしたら気のせいかも．．．",
+			description="実際に何が書かれていたかは分からないけれど、あなたの最善の推測でどうぞ"},
 				-- Or Nocturnal, or Fortuna, Tyche as easter eggs?
 
 		-- {original="???", name = "Complete the ritual", completion = "Maybe you'll be just a little bit luckier... And Writ Crafter has a new skin!",
 		-- description="Sheogorath will be very pleased if you complete them all!"},
 	},
-	["completePrevious"] = "You should probably complete the previous steps first",
-	['allComplete'] = "You completed the ritual!",
-	['allCompleteSubheading'] = "Even if RNGesus doesn't favour you next year, at least Writ Crafter has a new look!",
-	["goatContextTextText"] = "Goat",
+	["completePrevious"] = "先に前のステップを完了させておくとよいでしょう",
+	['allComplete'] = "全ての儀式的なエンデバーが完了した！",
+	['allCompleteSubheading'] = "来年たとえあなたが RNGesus神の恩寵を受けることが叶わなくとも、Writ Crafterアドオンの新しい外観スタイルが得られました！",
+	["goatContextTextText"] = "山羊",
+	["extraGoatyContextTextText"] = "山羊^n",
+	["extraSlash"] = "/yomu",
 	["bookText"] = 
 [[
-This ritual  |L0:0:0:45%%:8%%:ignore|lwill|l might give you great luck. Make sure to follow these steps exactly!
-1. Obtain some guts from a |L0:0:0:45%%:8%%:ignore|lsheep|l goat
-2. Go to |L0:0:0:45%%:8%%:ignore|lOblivion|l Arananga
-3. Burn the guts
-4. Praise [the name here is illegible]
+この儀式はあなたに大きな幸運をもたらす|L0:0:0:45%%:8%%:ignore|lでしょう|lかもしれない。 以下の手順を正確に実行してください！
 
-- Sincerely,
-|L0:0:0:45%%:8%%:ignore|lSheogorath|l Not Sheogorath]],
-["bookTitle"] = "A ritual for luck",
-["outOfRange"] = "You're not in the ritual area anymore!",
-["closeEnough"] = "Close enough",
-["praiseHint "] = "Maybe you need to say something about RNGesus?",
+1. |L0:0:0:45%%:8%%:ignore|l羊|l 山羊から新鮮な内蔵を入手する
+2. |L0:0:0:45%%:8%%:ignore|lオブリビオン|l アラナンガに向かう
+3. 生け贄の内蔵を燃やす
+4. [判読不能な名称] を称える
+
+- 真心を込めて,
+|L0:0:0:45%%:8%%:ignore|lシェオゴラス|l ツェオゴヲス]],
+	["bookTitle"] = "幸運を呼ぶ儀式",
+	["outOfRange"] = "あなたはもう儀式の場所にいません！",
+	["closeEnough"] = "じゅうぶん近いから合格",
+	["praiseHint "] = "(半角の)RNGesusについて何か言う必要があるんじゃない？",
 }
 --/esoui/art/icons/pet_041.dds
 --/esoui/art/icons/pet_042.dds
