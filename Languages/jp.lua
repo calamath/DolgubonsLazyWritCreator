@@ -941,8 +941,8 @@ WritCreater.cheeseyLocalizations
 	['menuName'] = "儀式",
 	['endeavorName'] = "儀式的なエンデバー",
 	['tasks']={
-		{original="あなたは奇妙なパンフレットを見つけました．．．多分それを読む(/read)べきです。",name="幸運を呼ぶ儀式の説明を読む", completion = "幸運を呼ぶ儀式を行う方法を学びました！",
-			description="本を読むエモート(/read)を使う"},
+		{original="あなたは奇妙なパンフレットを見つけました．．．多分それを読む(/yomu)べきです。",name="幸運を呼ぶ儀式の説明を読む", completion = "幸運を呼ぶ儀式を行う方法を学びました！",
+			description="本を読むエモート(/yomu)を使う"},
 
 		{original="???", name = "無実の山羊のはらわたを調達する", completion = "モンスターめ！ 幸運を呼ぶためなら何でもありだと思っている．．．",
 			description="死んだ家畜の山羊から内臓を入手する。別にあなたが殺める必要はないのだけど．．．でもそれが最も簡単な方法です"},
