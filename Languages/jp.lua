@@ -757,6 +757,7 @@ WritCreater.strings['masterWritSave']			= "Dolgubon's Lazy Writ Crafterは、あ
 WritCreater.strings['missingLibraries']			= "Dolgubon's Lazy Writ Crafterには次のスタンドアロンライブラリが必要です。ダウンロードしてインストールするかライブラリをオンにしてください: "
 WritCreater.strings['resetWarningMessageText']	= "デイリー依頼のリセットまで<<1>>時間<<2>>分です\n設定でこのワーニング表示のカスタマイズができます"
 WritCreater.strings['resetWarningExampleText']	= "ワーニングはこのように表示されます"
+WritCreater.strings['lowInventory']				= "\n空きスロットが <<1>>しか残っておらず、空きスロットが不足している可能性があります。"
 
 
 
@@ -767,7 +768,7 @@ WritCreater.optionStrings.accountWide                  = "アカウント共通"
 WritCreater.optionStrings.characterSpecific            = "キャラクター固有"
 WritCreater.optionStrings.useCharacterSettings         = "キャラクター固有の設定を使用する" -- de
 WritCreater.optionStrings.useCharacterSettingsTooltip  = "このキャラクターのみの固有の設定を使用します" --de
-WritCreater.optionStrings["style tooltip"]								= function (styleName, styleStone) return zo_strformat("スタイル素材「<<2>>」を用いる「<<1>>スタイル」を、クラフト時に使用できるようにします。",styleName, styleStone) end 
+WritCreater.optionStrings["style tooltip"]								= function (styleName, styleStone) return zo_strformat("スタイル素材「"..styleStone.."」を用いる「<<1>>スタイル」を、クラフト時に使用できるようにします。",styleName, styleStone) end 
 WritCreater.optionStrings["show craft window"]							= "クラフトウィンドウを表示"
 WritCreater.optionStrings["show craft window tooltip"]					= "クラフト台を開いたときにクラフトウィンドウを表示します"
 WritCreater.optionStrings["autocraft"]									= "クラフトの自動化"
@@ -893,14 +894,19 @@ WritCreater.optionStrings["jubilee"]									= "記念祭の箱の中身を取�
 WritCreater.optionStrings["jubilee tooltip"]							= "記念祭のギフトボックスからアイテムを自動的に取り出します"
 WritCreater.optionStrings["skin"]										= "Writ CrafterのUIスキン"
 WritCreater.optionStrings["skinTooltip"]								= "Writ CrafterのUI用のスキン"
-WritCreater.optionStrings["skinOptions"]								= {"標準", "チーズくさい"}
+WritCreater.optionStrings["skinOptions"]								= {"標準", "チーズくさい", "山羊っぽい"}
+WritCreater.optionStrings["goatSkin"]									= "山羊っぽい"
+WritCreater.optionStrings["cheeseSkin"]									= "チーズくさい"
+WritCreater.optionStrings["defaultSkin"]								= "標準"
 
 WritCreater.optionStrings["rewardChoices"]								= {"何もしない","預ける","ガラクタ", "破壊する"}
 WritCreater.optionStrings["scan for unopened"]							= "ログイン時にコンテナを開く"
 WritCreater.optionStrings["scan for unopened tooltip"]					= "ログイン時にバッグをスキャンして、クラフト依頼の未開封の報酬コンテナを探し、開封を試みます"
 
-WritCreater.optionStrings["smart style slot save"]							= "スタイル素材を少ない順に使用"
-WritCreater.optionStrings["smart style slot save tooltip"]					= "ESO Plus会員ではないとき、スタイル素材のより小さなスタックから使用することで、使用されるスロットを最小限に抑えることを試みます"
+WritCreater.optionStrings["smart style slot save"]						= "スタイル素材を少ない順に使用"
+WritCreater.optionStrings["smart style slot save tooltip"]				= "ESO Plus会員ではないとき、スタイル素材のより小さなスタックから使用することで、使用されるスロットを最小限に抑えることを試みます"
+WritCreater.optionStrings["abandon quest for item"]						= "<<1>>を必要とする令状"
+WritCreater.optionStrings["abandon quest for item tooltip"]				= "<<1>>を必要とする令状を放棄します"
 
 
 --[[
