@@ -906,7 +906,17 @@ WritCreater.optionStrings["scan for unopened tooltip"]					= "ログイン時に
 WritCreater.optionStrings["smart style slot save"]						= "スタイル素材を少ない順に使用"
 WritCreater.optionStrings["smart style slot save tooltip"]				= "ESO Plus会員ではないとき、スタイル素材のより小さなスタックから使用することで、使用されるスロットを最小限に抑えることを試みます"
 WritCreater.optionStrings["abandon quest for item"]						= "<<1>>を必要とする令状"
-WritCreater.optionStrings["abandon quest for item tooltip"]				= "<<1>>を必要とする令状を放棄します"
+WritCreater.optionStrings["abandon quest for item tooltip"]				= "これをオフにすると、<<1>>を必要とする令状を自動的に放棄します"
+WritCreater.optionStrings["status bar submenu"]							= "ステータスバー オプション"
+WritCreater.optionStrings["status bar submenu tooltip"]					= "ステータスバー オプション"
+WritCreater.optionStrings['showStatusBar']								= "クエストステータスバーの表示"
+WritCreater.optionStrings['showStatusBarTooltip']						= "クエストステータスバーを表示するか"
+WritCreater.optionStrings['statusBarIcons']								= "アイコンを使う"
+WritCreater.optionStrings['statusBarIconsTooltip']						= "令状クエストの種別を表すアルファベットの代わりに、クラフトアイコンを表示します"
+WritCreater.optionStrings['transparentStatusBar']						= "ステータスバーの透明化"
+WritCreater.optionStrings['transparentStatusBarTooltip']				= "ステータスバーの背景を透明化します"
+WritCreater.optionStrings['statusBarInventory']							= "インベントリ トラッカー"
+WritCreater.optionStrings['statusBarInventoryTooltip']					= "インベントリの空き状況の表示をステータスバーに追加します"
 
 
 --[[
