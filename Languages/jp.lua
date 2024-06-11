@@ -738,7 +738,8 @@ WritCreater.strings["complete"] 				= "|c00FF00令状完了|r"
 WritCreater.strings["craftingstopped"] 			= "クラフトを中止しました。アドオンが正しいアイテムをクラフトしていたかチェックしてください"
 WritCreater.strings["smithingReqM"] 			= function(amount, type, more) return zo_strformat("クラフトには<<1>>を<<2>>個使用 (|cf60000あと<<3>>個必要|r)", type, amount, more) end
 WritCreater.strings["smithingReqM2"] 			= function (amount,type,more) return zo_strformat("\n同様に<<1>>を<<2>>個使用 (|cf60000あと<<3>>個必要|r)", type, amount, more) end
-WritCreater.strings["smithingReq"] 				= function (amount,type, current) return zo_strformat("クラフトには<<1>>を<<2>>個使用 (|c2dff00<<3>>個使用可能|r)", type, amount, current) end
+WritCreater.strings["smithingReq"] 				= function (amount,type, current) return zo_strformat("クラフトには<<1>>を<<2>>個使用 (|c2dff00<<3>>個使用可能|r)", type, amount, 
+														zo_strformat(SI_NUMBER_FORMAT, ZO_AbbreviateNumber(current, NUMBER_ABBREVIATION_PRECISION_TENTHS, USE_LOWERCASE_NUMBER_SUFFIXES))) end
 WritCreater.strings["smithingReq2"] 			= function (amount,type, current) return zo_strformat("\n同様に<<1>>を<<2>>個使用 (|c2dff00<<3>>個使用可能|r)", type, amount, current) end
 WritCreater.strings["lootReceived"]				= "<<1>> <<3>>個 を受け取った (<<2>>個 所持)"
 WritCreater.strings["lootReceivedM"]			= "<<1>> を受け取った "
@@ -905,8 +906,8 @@ WritCreater.optionStrings["scan for unopened tooltip"]					= "ログイン時に
 
 WritCreater.optionStrings["smart style slot save"]						= "スタイル素材を少ない順に使用"
 WritCreater.optionStrings["smart style slot save tooltip"]				= "ESO Plus会員ではないとき、スタイル素材のより小さなスタックから使用することで、使用されるスロットを最小限に抑えることを試みます"
-WritCreater.optionStrings["abandon quest for item"]						= "<<1>>を必要とする令状"
-WritCreater.optionStrings["abandon quest for item tooltip"]				= "これをオフにすると、<<1>>を必要とする令状を自動的に放棄します"
+WritCreater.optionStrings["abandon quest for item"]						= "<<1>>を納品する令状"
+WritCreater.optionStrings["abandon quest for item tooltip"]				= "これをオフにすると、<<1>>を納品する令状を自動的に放棄します。<<1>>を必要とするアイテムをクラフトが必要なクエストは放棄されません"
 WritCreater.optionStrings["status bar submenu"]							= "ステータスバー オプション"
 WritCreater.optionStrings["status bar submenu tooltip"]					= "ステータスバー オプション"
 WritCreater.optionStrings['showStatusBar']								= "クエストステータスバーの表示"
@@ -919,7 +920,6 @@ WritCreater.optionStrings['statusBarInventory']							= "インベントリ ト�
 WritCreater.optionStrings['statusBarInventoryTooltip']					= "インベントリの空き状況の表示をステータスバーに追加します"
 
 
---[[
 WritCreater.cheeseyLocalizations
 =
 {
@@ -949,8 +949,9 @@ WritCreater.cheeseyLocalizations
 WritCreater.cheeseBingos["私はチーズが大好きだ"] = true
 WritCreater.cheeseBingos["私はチーズが大好きだー"] = true
 WritCreater.cheeseBingos["私はチーズが大好きだー！"] = true
-]]
 
+
+--[[
 WritCreater.cheeseyLocalizations
 =
 {
@@ -983,7 +984,7 @@ WritCreater.cheeseyLocalizations
 	["extraGoatyContextTextText"] = "山羊^n",
 	["extraSlash"] = "/yomu",
 	["bookText"] = 
-[[
+[=[
 この儀式はあなたに大きな幸運をもたらす|L0:0:0:45%%:8%%:ignore|lでしょう|lかもしれない。 以下の手順を正確に実行してください！
 
 1. |L0:0:0:45%%:8%%:ignore|l羊|l 山羊から新鮮な内蔵を入手する
@@ -992,12 +993,18 @@ WritCreater.cheeseyLocalizations
 4. [判読不能な名称] を称える
 
 - 真心を込めて,
-|L0:0:0:45%%:8%%:ignore|lシェオゴラス|l ツェオゴヲス]],
+|L0:0:0:45%%:8%%:ignore|lシェオゴラス|l ツェオゴヲス]=],
 	["bookTitle"] = "幸運を呼ぶ儀式",
 	["outOfRange"] = "あなたはもう儀式の場所にいません！",
 	["closeEnough"] = "じゅうぶん近いから合格",
 	["praiseHint "] = "(半角の)RNGesusについて何か言う必要があるんじゃない？",
 }
+]]
+
+WritCreater.cheeseyLocalizations["alreadyUnlocked"] = "Writ CrafterのUIスキン解除済"
+WritCreater.cheeseyLocalizations["alreadyUnlockedTooltip"] = "あなたは 2022年4月1日に既にUIスキンを解除済です。もう一度やるのは単なるお楽しみのため！"
+WritCreater.cheeseyLocalizations["settingsChooseSkin"] = "あなたは設定メニューからUIスキンを変更できます"
+
 --/esoui/art/icons/pet_041.dds
 --/esoui/art/icons/pet_042.dds
 --/esoui/art/icons/pet_sheepbrown.dds
