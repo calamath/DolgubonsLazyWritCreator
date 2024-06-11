@@ -841,7 +841,7 @@ WritCreater.optionStrings["goatSkin"]									= "山羊っぽい"
 WritCreater.optionStrings["cheeseSkin"]									= "チーズくさい"
 WritCreater.optionStrings["defaultSkin"]								= "標準"
 
-WritCreater.optionStrings["rewardChoices"]								= {"何もしない","預ける","ガラクタ", "破壊する"}
+WritCreater.optionStrings["rewardChoices"]								= {"何もしない","預ける","ガラクタ", "破壊する", "解体する"}
 WritCreater.optionStrings["scan for unopened"]							= "ログイン時にコンテナを開く"
 WritCreater.optionStrings["scan for unopened tooltip"]					= "ログイン時にバッグをスキャンして、クラフト依頼の未開封の報酬コンテナを探し、開封を試みます"
 
